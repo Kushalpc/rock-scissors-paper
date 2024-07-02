@@ -15,6 +15,10 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let randomChoice = prompt("Rock, Scissors, Paper?", "");
+    
+    if(randomChoice === null){
+        alert("Game cancelled");
+    }
     return randomChoice.toLowerCase();
 }
 
