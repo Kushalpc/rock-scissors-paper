@@ -21,6 +21,9 @@ function getHumanChoice(){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
+let humanScore = 0;
+let computerScore = 0;
+
 function playRound(humanChoice, computerChoice){
 
     if(humanChoice == "rock" && computerChoice == "rock"){
@@ -44,10 +47,28 @@ function playRound(humanChoice, computerChoice){
     }else{
         alert("There is an error")
     }
-       
-    
+
+
+    if(humanChoice == computerChoice){
+        ++humanScore;
+        ++computerScore;
+    }else if(humanChoice == "rock" && computerChoice == "scissors"){
+        ++humanScore;
+    }else if (humanChoice == "rock" && computerChoice == "paper"){
+        ++computerScore;
+    }else if(humanChoice == "scissors" && computerChoice == "rock"){
+        ++computerScore
+    }else if(humanChoice == "scissors" && computerChoice == "paper"){
+        ++humanScore
+    }else if(humanChoice == "paper" && computerChoice == "scissors"){
+        ++computerScore
+    }else if(humanChoice == "paper" && computerChoice == "rock"){
+        ++humanScore
+    }else{
+        return "There is an error"
+    }
+    alert("The score is now " + humanScore + "-" + computerScore)
+
+    return;
 }
-
-
-playRound(humanSelection, computerSelection);
 
